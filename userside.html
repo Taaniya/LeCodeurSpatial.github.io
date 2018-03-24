@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Side PAS</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script type="text/javascript">
+		function dispALL(){
+			document.getElementById('allbt').classList.add("active");
+			document.getElementById('crbt').classList.remove("active");
+			document.getElementById('wrbt').classList.remove("active");
+			document.getElementById('hrbt').classList.remove("active");
+			document.getElementById('trbt').classList.remove("active");
+			document.getElementById('cr').style.display="block";
+			document.getElementById('wr').style.display="block";
+			document.getElementById('hr').style.display="block";
+			document.getElementById('tr').style.display="block";
+		}
+		function dispCr(){
+			document.getElementById('crbt').classList.add("active");
+			document.getElementById('allbt').classList.remove("active");
+			document.getElementById('wrbt').classList.remove("active");
+			document.getElementById('hrbt').classList.remove("active");
+			document.getElementById('trbt').classList.remove("active");
+			document.getElementById('cr').style.display="block";
+			document.getElementById('wr').style.display="none";
+			document.getElementById('hr').style.display="none";
+			document.getElementById('tr').style.display="none";
+		}
+		function dispWr(){
+			document.getElementById('wrbt').classList.add("active");
+			document.getElementById('allbt').classList.remove("active");
+			document.getElementById('crbt').classList.remove("active");
+			document.getElementById('hrbt').classList.remove("active");
+			document.getElementById('trbt').classList.remove("active");
+			document.getElementById('wr').style.display="block";
+			document.getElementById('cr').style.display="none";
+			document.getElementById('hr').style.display="none";
+			document.getElementById('tr').style.display="none";
+		}
+		function dispHr(){
+			document.getElementById('hrbt').classList.add("active");
+			document.getElementById('crbt').classList.remove("active");
+			document.getElementById('wrbt').classList.remove("active");
+			document.getElementById('allbt').classList.remove("active");
+			document.getElementById('trbt').classList.remove("active");
+			document.getElementById('hr').style.display="block";
+			document.getElementById('cr').style.display="none";
+			document.getElementById('wr').style.display="none";
+			document.getElementById('tr').style.display="none";
+		}
+		function dispTr(){
+			document.getElementById('trbt').classList.add("active");
+			document.getElementById('crbt').classList.remove("active");
+			document.getElementById('wrbt').classList.remove("active");
+			document.getElementById('hrbt').classList.remove("active");
+			document.getElementById('allbt').classList.remove("active");
+			document.getElementById('tr').style.display="block";
+			document.getElementById('cr').style.display="none";
+			document.getElementById('wr').style.display="none";
+			document.getElementById('hr').style.display="none";
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<div class="logodiv" id="logodiv">
+			<img id="logo" src="img/rlogo.png">
+		</div>
+
+		<div id="title">
+			<h1>PUBLIC ADDRESS SYSTEM</h1>
+
+		</div>
+
+		<section>
+			<button>Login</button>
+
+		</section>
+	</header>
+
+
+	<div id="container">
+
+		<nav>
+
+			<ul>
+			  <li><a class="active" href="#all" id="allbt" onclick="dispALL()">All</a></li>
+			  <li><a href="#cr" id="crbt" onclick="dispCr()">Central</a></li>
+			  <li><a href="#wr" id="wrbt" onclick="dispWr()">Western</a></li>
+			  <li><a href="#hr" id="hrbt" onclick="dispHr()">Harbour</a></li>
+			  <li><a href="#tr" id="trbt" onclick="dispTr()">Trans</a></li>
+			</ul>
+
+
+			<form method="get">
+				<input list="stations" name="Station" autocomplete="off">
+				<datalist id="stations">
+					<option value="Chhatrapati Shivaji Terminus">
+					<option value="Masjid">
+					<option value="Sandhurst Road">
+					<option value="Dockyard Road">
+					<option value="Reay Road">
+					<option value="Cotton Green">
+					<option value="Sewri">
+					<option value="Wadala Road">
+					<option value="King's Circle">
+					<option value="Mahim">
+					<option value="Bandra">
+					<option value="Khar Road">
+					<option value="Santacruz">
+					<option value="Vile Parle">
+					<option value="Andheri">
+				</datalist>
+				<input type="submit" value="Search">
+			</form>
+
+		</nav>
+
+		<div id="content">
+			
+			<div id="all" class="conspace">
+				<div id="cr"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> CST-Kalyan </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="wr"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> Churchgate-Andheri </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="wr"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> Churchgate-Borivali </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="hr"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> CST-Bandra </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="hr"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> CST-Belapur </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="hr"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> CST-Panvel </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="hr"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> CST-Vashi  </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="hr"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> CST-Andheri </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="hr"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> CST-Belapur </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="hr"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> CST-Panvel </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="tr"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> Nerul-Thane </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+			</div>
+
+			<!-- <div id="cr" class="conspace">
+				<p> CST-Kalyan</p>
+			</div>
+
+			<div id="wr" class="conspace">
+				<p> Churchgate-Andheri</p>
+				<p> Churchgate-Borivali</p>
+				
+			</div>
+
+			<div id="hr" class="conspace">
+				<p>	CST-Bandra</p>
+				<p>	CST-Belapur</p>
+				<p>	CST-Panvel</p>
+				<p>	CST-Vashi</p>
+				<p>	CST-Andheri</p>
+				<p>	CST-Belapur</p>
+				<p>	CST-Panvel</p>
+			</div>
+
+			<div id="tr" class="conspace">
+				<p>Nerul-Thane</p>
+			</div> -->
+				
+
+
+		</div>
+
+	</div>
+
+
+	<footer>
+		<h2 style="color: white;">
+			Contact IR
+		</h2>
+	</footer>
+</body>
+</html>

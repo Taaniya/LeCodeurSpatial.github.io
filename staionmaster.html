@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Station Master</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	
+	<script>
+		function allowDrop(ev) {
+		    ev.preventDefault();
+		}
+
+		function drag(ev) {
+		    ev.dataTransfer.setData("text", ev.target.id);
+		}
+
+		function drop(ev) {
+		    ev.preventDefault();
+		    var data = ev.dataTransfer.getData("text");
+		    ev.target.appendChild(document.getElementById(data));
+
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<div class="logodiv" id="logodiv">
+			<img id="logo" src="img/rlogo.png">
+		</div>
+
+		<div id="title">
+			<h1>PUBLIC ADDRESS SYSTEM</h1>
+
+		</div>
+
+		<section>
+			<button>Login</button>
+
+		</section>
+	</header>
+
+	<div id="container">
+		<nav>
+
+
+
+
+			<form method="get">
+				<input list="stations" name="Station" autocomplete="off">
+				<datalist id="stations">
+					<option value="Chhatrapati Shivaji Terminus">
+					<option value="Masjid">
+					<option value="Sandhurst Road">
+					<option value="Dockyard Road">
+					<option value="Reay Road">
+					<option value="Cotton Green">
+					<option value="Sewri">
+					<option value="Wadala Road">
+					<option value="King's Circle">
+					<option value="Mahim">
+					<option value="Bandra">
+					<option value="Khar Road">
+					<option value="Santacruz">
+					<option value="Vile Parle">
+					<option value="Andheri">
+				</datalist>
+				<input type="submit" value="Search">
+			</form>
+
+		</nav>
+
+
+
+		<div id="container1">
+			<div id="all" class="conspace">
+				<div id="cr" draggable="true" ondragstart="drag(event)"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> CST-Kalyan </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="wr" draggable="true" ondragstart="drag(event)"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> Churchgate-Andheri </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="wr" draggable="true" ondragstart="drag(event)"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> Churchgate-Borivali </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="hr" draggable="true" ondragstart="drag(event)"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> CST-Bandra </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="hr" draggable="true" ondragstart="drag(event)"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> CST-Belapur </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="hr" draggable="true" ondragstart="drag(event)"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> CST-Panvel </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="hr" draggable="true" ondragstart="drag(event)"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> CST-Vashi  </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="hr" draggable="true" ondragstart="drag(event)"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> CST-Andheri </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="hr" draggable="true" ondragstart="drag(event)"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> CST-Belapur </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="hr" draggable="true" ondragstart="drag(event)"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> CST-Panvel </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+				<div id="tr" draggable="true" ondragstart="drag(event)"><span id="time">00:00 </span> <span id="apm">am/pm</span> <span id="s2d"> Nerul-Thane </span> <span id="cars"> 12</span> <span id="mode"> F/S</span> </div><br>
+			</div>
+		</div>
+		<div id="container2">
+			<div class="conspace" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<div id="advaceoptions">
+					Checklist1: <input type="checkbox" name="checklist1" onclick="()">
+					Checklist2: <input type="checkbox" name="checklist2" onclick="()">
+					Checklist3: <input type="checkbox" name="checklist3" onclick="()">
+				</div>
+			</div>
+			
+		</div>
+
+
+
+	</div>
+
+
+
+
+
+	<footer>
+		<h2 style="color: white;">
+			Contact IR
+		</h2>
+	</footer>
+</body>
+</html>
