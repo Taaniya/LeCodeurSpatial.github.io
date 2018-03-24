@@ -41,7 +41,9 @@ function showPosition(position) {
 var x = document.getElementById("demo");
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(showPosition, function error(msg){alert('Please enable your GPS position future.');  
+
+  } ,{maximumAge:600000, timeout:5000, enableHighAccuracy: true});
     } else { 
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
@@ -53,7 +55,8 @@ function showPosition(position) {
     x.innerHTML = "Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude;
     var l1= position.coords.latitude ;
-    var l2= position.coords.longitude ; 
+    var l2= position.coords.longitude ;
+    console.log(position.coords.accuracy); 
     console.log(l1);
     console.log(l2);
     console.log(pos);
@@ -66,6 +69,8 @@ function showPosition(position) {
 				location:l1+' ,'+l2 ,
 				keyword:'railway station',
 				rankby:'distance',
+				/*keyword:'railway',*/
+				/*radius:'1000',*/
 				key:'AIzaSyAtwUD7qYaGPkDIm7joVw49DGtGHg2LuuY'
 			}
 
@@ -74,7 +79,9 @@ function showPosition(position) {
 	// 	axios.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+l1+","+l2+"&radius=500&keyword=railway+station &key= AIzaSyAtwUD7qYaGPkDIm7joVw49DGtGHg2LuuY")
 		
 		.then(function(response){
+        	console.log("In response function");
         	console.log(response);
+        	console.log("In response function");
 	        var names=response.data.results[0].name;
 	        document.getElementById('first').innerHTML="first element: "+names;
 	
